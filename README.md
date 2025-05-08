@@ -8,7 +8,7 @@ This repo showcases an simple website deployed on [Cloudflare](https://workers.c
    
    [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/markjmiller/cloudflare-alchemy/tree/main/platform)
 
-2. Deploy the "website" and IaC resources by running these in the `website` directory:
+2. Deploy the "website" and IaC resources by running these in the [website directory](/website/):
 
    ```bash
    npm install && npm run deploy
@@ -21,4 +21,4 @@ IaC is managed with Alchemy in [this file](/website/alchemy.run.ts).
 TODO: create [custom resource](https://alchemy.run/docs/guides/custom-resources.html).
 
 Prompt (replace `REPLACE_ME` with your own workers.dev subdomain):
-> Create a Resource for managing a User See: https://example-platform.REPLACE_ME.workers.dev/docs/api
+> Create a Resource for managing a User. See: https://example-platform.REPLACE_ME.workers.dev/docs/api
