@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: Example Platform
+  description: This is an example API for a platform than manages Organizations and Users.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: "https://example-third-part-platform.{cloudflare-workers-subdomain}.workers.dev/api"
+    variables:
+      cloudflare-workers-subdomain:
+        default: replace-me
+
+paths:
+  /org/{orgId}/users:
+    get:
+      summary: List all users
+      tags:
+        - Organization
+      operationId: listUsers
+      security:
+        - BasicAuth: []
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      responses:
+        200:
+          description: Returns an array of Users
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Users"
+        404:
+          description: Organization not found
+    post:
+      summary: Create a user
+      tags:
+        - Organization
+      operationId: createUser
+      security:
+        - BasicAuth: []
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+      requestBody:
+        description: Info for a new User
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProperties'
+      responses:
+        201:
+          description: A User was created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        404:
+          description: Organization not found
+  /org/{orgId}/user/{userId}:
+    get:
+      summary: Get info for a User
+      tags:
+        - Users
+      operationId: getUser
+      security:
+        - BasicAuth: []
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/userId'
+      responses:
+        200:
+          description: Returns Info for a User
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        404:
+          description: User not found
+    patch:
+      summary: Update a User with new properties
+      tags:
+        - Users
+      operationId: updateUser
+      security:
+        - BasicAuth: []
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/userId'
+      requestBody:
+        description: User properties to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProperties'
+      responses:
+        204:
+          description: Returns the newly updated User info
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        404:
+          description: User not found
+    delete:
+      summary: Delete a specific user
+      tags:
+        - Users
+      operationId: deleteUser
+      security:
+        - BasicAuth: []
+      parameters:
+        - $ref: '#/components/parameters/orgId'
+        - $ref: '#/components/parameters/userId'
+      responses:
+        204:
+          description: The User was deleted
+        404:
+          description: User not found
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+  parameters:
+    orgId:
+      name: orgId
+      in: path
+      required: true
+      schema:
+        type: string
+    userId:
+      name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    UserId:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+    UserProperties:
+      type: object
+      required:
+        - firstName
+        - lastName
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        funFact:
+          type: string
+    User:
+      allOf:
+        - $ref: '#/components/schemas/UserId'
+        - $ref: '#/components/schemas/UserProperties'
+    Users:
+      type: array
+      items:
+        $ref: "#/components/schemas/User"
