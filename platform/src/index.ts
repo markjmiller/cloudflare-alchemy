@@ -14,7 +14,7 @@ declare module "hono" {
   }
 }
 
-const app = new Hono<{ Bindings: Bindings }>();
+const app = new Hono<{ Bindings: Cloudflare.Env }>();
 app.use(prettyJSON());
 app.notFound((c) => c.json({ message: "Not Found", ok: false }, 404));
 app.get("/", async (c) =>
@@ -24,12 +24,7 @@ app.get("/docs/api", async (c) =>
   c.env.ASSETS.fetch("https://assets.local/docs/openapi.html"),
 );
 
-const api = new Hono<{ Bindings: Bindings }>();
-
-type Bindings = {
-  ORGANIZATION: DurableObjectNamespace<Organization>;
-  ASSETS: Fetcher;
-};
+const api = new Hono<{ Bindings: Cloudflare.Env }>();
 
 api.use("/org/:orgId/*", async (c, next) => {
   const id: string = c.req.param("orgId");

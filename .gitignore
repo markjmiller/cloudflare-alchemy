@@ -1,5 +1,12 @@
+# Auto-generated
 example-website/*
 example-website-app/*
+.alchemy/*
+.wrangler
+node_modules
+dist
+dist-ssr
+*.local
 
 # Logs
 logs
@@ -9,14 +16,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-.env
-.alchemy/*
-.wrangler
 
 # Editor directories and files
 .vscode/*
@@ -28,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.cursorrules
+.env
