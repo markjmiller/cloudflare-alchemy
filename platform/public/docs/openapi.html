@@ -1677,10 +1677,10 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 </blockquote>
 <pre class="highlight tab tab-json"><code>[
   {
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+    <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+    <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
   }
 ]
 </code></pre>
@@ -1726,9 +1726,9 @@ curl -X POST https://example-third-part-platform.{cloudflare-workers-subdomain}.
 </code></pre>
 <pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> fetch = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node-fetch&#x27;</span>);
 <span class="hljs-keyword">const</span> inputBody = {
-  <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-string">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-string">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 };
 <span class="hljs-keyword">const</span> headers = {
   <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
@@ -1754,9 +1754,9 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 </code></pre>
 <h3 id="createuser-parameters">Parameters</h3>
@@ -1794,10 +1794,10 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <p>201 Response</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 </code></pre>
 <h3 id="createuser-responses">Responses</h3>
@@ -1883,7 +1883,7 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <tr>
 <td>userId</td>
 <td>path</td>
-<td>string</td>
+<td><a href="#schemauserid">UserId</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
@@ -1896,10 +1896,10 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <p>200 Response</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 </code></pre>
 <h3 id="getuser-responses">Responses</h3>
@@ -1944,9 +1944,9 @@ curl -X PATCH https://example-third-part-platform.{cloudflare-workers-subdomain}
 </code></pre>
 <pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> fetch = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node-fetch&#x27;</span>);
 <span class="hljs-keyword">const</span> inputBody = {
-  <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-string">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-string">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-string">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-string">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 };
 <span class="hljs-keyword">const</span> headers = {
   <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
@@ -1972,9 +1972,9 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 </code></pre>
 <h3 id="updateuser-parameters">Parameters</h3>
@@ -1999,7 +1999,7 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <tr>
 <td>userId</td>
 <td>path</td>
-<td>string</td>
+<td><a href="#schemauserid">UserId</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
@@ -2019,10 +2019,10 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <p>204 Response</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 </code></pre>
 <h3 id="updateuser-responses">Responses</h3>
@@ -2101,7 +2101,7 @@ fetch(<span class="hljs-string">&#x27;https://example-third-part-platform.{cloud
 <tr>
 <td>userId</td>
 <td>path</td>
-<td>string</td>
+<td><a href="#schemauserid">UserId</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
@@ -2143,7 +2143,7 @@ BasicAuth
 <a id="tocSuserid"></a>
 <a id="tocsuserid"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>
 }
 
 </code></pre>
@@ -2174,9 +2174,9 @@ BasicAuth
 <a id="tocSuserproperties"></a>
 <a id="tocsuserproperties"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 
 </code></pre>
@@ -2221,10 +2221,10 @@ BasicAuth
 <a id="tocSuser"></a>
 <a id="tocsuser"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+  <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
 }
 
 </code></pre>
@@ -2278,10 +2278,10 @@ BasicAuth
 <a id="tocsusers"></a></p>
 <pre class="highlight tab tab-json"><code>[
   {
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;0fcdec2eb49045cc8b481c15e0f1277c&quot;</span>,
+    <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;Mark&quot;</span>,
+    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;Miller&quot;</span>,
+    <span class="hljs-attr">&quot;funFact&quot;</span>: <span class="hljs-string">&quot;I help make a better internet at Cloudflare!&quot;</span>
   }
 ]
 

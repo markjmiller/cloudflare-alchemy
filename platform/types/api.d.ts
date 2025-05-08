@@ -46,11 +46,15 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         UserId: {
+            /** @example 0fcdec2eb49045cc8b481c15e0f1277c */
             id: string;
         };
         UserProperties: {
+            /** @example Mark */
             firstName: string;
+            /** @example Miller */
             lastName: string;
+            /** @example I help make a better internet at Cloudflare! */
             funFact?: string;
         };
         User: components["schemas"]["UserId"] & components["schemas"]["UserProperties"];
@@ -59,7 +63,7 @@ export interface components {
     responses: never;
     parameters: {
         orgId: string;
-        userId: string;
+        userId: components["schemas"]["UserId"];
     };
     requestBodies: never;
     headers: never;

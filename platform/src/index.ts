@@ -4,7 +4,7 @@ import { prettyJSON } from "hono/pretty-json";
 import { User, UserProperties, Users } from "../types/app";
 
 function isValidId(value: string): boolean {
-  return value.match(/^[0-9a-fA-F]{32}\b$/g) !== null;
+  return value.match(/^[0-9a-fA-F]{32}$/g) !== null;
 }
 
 declare module "hono" {
@@ -47,6 +47,7 @@ api.get("/org/:orgId/users", async (c) =>
   c.json<Users>(await c.get("org").getUsers()),
 );
 api.post("/org/:orgId/users", async (c) =>
+  // TODO there is no validation of the request body schema
   c.json<User>(
     await c.get("org").createUser(await c.req.json<UserProperties>()),
   ),
@@ -67,6 +68,7 @@ api.use("/org/:orgId/user/:userId", async (c, next) => {
 });
 api.get("/org/:orgId/user/:userId", (c) => c.json<User>(c.get("user")));
 api.patch("/org/:orgId/user/:userId", async (c) => {
+  // TODO there is no validation of the request body schema
   const props = await c.req.json<UserProperties>();
   const user = await c.get("org").updateUserById(c.get("user").id, props);
   if (!user) {

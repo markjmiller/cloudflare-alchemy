@@ -4,11 +4,15 @@ This repo showcases an simple website deployed on [Cloudflare](https://workers.c
 
 ## Getting Started
 
-1. Deploy the "platform" by following [this guide](/platform/README.md) (simply click the "Deploy to Cloudflare" button!).
+1. Deploy the "platform" by following [this guide](/platform/README.md) or simply click:
+   
+   [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/markjmiller/cloudflare-alchemy/tree/main/platform)
+
 2. Deploy the "website" and IaC resources by running these in the `website` directory:
-```bash
-npm install && npm run deploy
-```
+
+   ```bash
+   npm install && npm run deploy
+   ```
 
 ## IaC
 
