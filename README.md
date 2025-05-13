@@ -8,19 +8,38 @@ This repo showcases an simple website deployed on [Cloudflare](https://workers.c
    
    [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/markjmiller/cloudflare-alchemy/tree/main/platform)
 
-2. Deploy the "website" and IaC resources by running these in the [website directory](/website/):
+2. Clone [this forked Alchemy repo](https://github.com/markjmiller/alchemy) and set the `alchemy` dependency in [/website/package.json](/website/package.json) to:
 
-   ```bash
-   npm install && npm run deploy
+   ```json
+   "dependencies": {
+      "alchemy": "file:/path/to/alchemy/alchemy",
+   },
    ```
 
-That's it! Alchemy should have successfully created the website and provisioned resources from the platform.
+   Where the path is to the `alchemy` directory inside the cloned git repo (i.e. `alchemy/alchemy`). In the Alchemy git directory, you will also have to run the following to generate `/alchemy/lib/` (you will need [bun](https://bun.sh/docs/installation)):
+
+   ```bash
+   bun install && bun run build
+   ```
+   > This might fail if there are build issues, but in my testing it generated what I needed. You also have to delete anything the last build generated to rebuild.
+
+3. Deploy the "website" and IaC resources by running this in the [website directory](/website/):
+
+   ```bash
+   export API_URL="https://example-platform.REPLACE_ME.workers.dev/api" && npm install && npm run deploy
+   ```
+
+   > Replace `REPLACE_ME` with your own workers.dev subdomain
+
+That's it! Alchemy should have successfully created the website and provisioned the `User` resource for the example platform.
 
 ## IaC
 
-IaC is managed with Alchemy in [this file](/website/alchemy.run.ts).
+IaC is managed with Alchemy in [this file](/website/alchemy.run.ts). The instructions above point to a forked Alchemy repo with a custom `example-platform` resource. This was done by following [this guide](https://alchemy.run/docs/guides/custom-resources.html) with a prompt similar to:
 
-TODO: create [custom resource](https://alchemy.run/docs/guides/custom-resources.html).
-
-Prompt (replace `REPLACE_ME` with your own workers.dev subdomain):
 > Create a Resource for managing a User. See: https://example-platform.REPLACE_ME.workers.dev/docs/api
+
+It pretty much one-shot the whole thing with only minor edits needed!
+
+## TODO
+- The deployed website doesn't actually depend on the resources from the example platform yet. It could make a call to `https://example-platform.REPLACE_ME.workers.dev/api/org/fe110c72385f49a4ad721a26cdd0f730/users` to list users.

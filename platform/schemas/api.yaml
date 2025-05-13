@@ -8,7 +8,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 
 servers:
-  - url: "https://example-third-part-platform.{cloudflare-workers-subdomain}.workers.dev/api"
+  - url: "https://example-platform.{cloudflare-workers-subdomain}.workers.dev/api"
     variables:
       cloudflare-workers-subdomain:
         default: replace-me

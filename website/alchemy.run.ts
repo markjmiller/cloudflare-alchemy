@@ -1,5 +1,6 @@
 import alchemy from "alchemy";
 import { Vite } from "alchemy/cloudflare";
+import { User } from "alchemy/example-platform";
 
 // Initialize the Alchemy application scope
 const app = await alchemy("example-website-app", {
@@ -16,8 +17,16 @@ export const website = await Vite("example-website", {
   main: "./src/index.ts",
 });
 
+export const user = await User('user-mark', {
+  orgId: 'fe110c72385f49a4ad721a26cdd0f730',
+  firstName: 'Mark',
+  lastName: 'Miller',
+  funFact: 'I help make a better internet at Cloudflare!'
+});
+
 console.log({
-  url: website.url
+  url: website.url,
+  userId: user.id
 });
 
 // Finalize the app to apply changes
