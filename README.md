@@ -41,5 +41,39 @@ IaC is managed with Alchemy in [this file](/website/alchemy.run.ts). The instruc
 
 It pretty much one-shot the whole thing with only minor edits needed!
 
+Here's an example of the `.alchemy/user-mark.json` file that gets create to track state:
+```
+{
+  "kind": "example-platform::User",
+  "id": "user-mark",
+  "fqn": "example-website-app/markmiller/user-mark",
+  "seq": 1,
+  "data": {},
+  "status": "created",
+  "output": {
+    "id": "3ae8571d0b2548bbbb122eb45b9584ff",
+    "orgId": "fe110c72385f49a4ad721a26cdd0f730",
+    "firstName": "Mark",
+    "lastName": "Miller",
+    "funFact": "I help make a better internet at Cloudflare!",
+    "createdAt": 1747937800329,
+    "Kind": "example-platform::User",
+    "ID": "user-mark",
+    "FQN": "example-website-app/markmiller/user-mark",
+    "Scope": {
+      "@scope": null
+    },
+    "Seq": 1
+  },
+  "props": {
+    "orgId": "fe110c72385f49a4ad721a26cdd0f730",
+    "firstName": "Mark",
+    "lastName": "Miller",
+    "funFact": "I help make a better internet at Cloudflare!"
+  }
+}
+```
+
 ## TODO
+
 - The deployed website doesn't actually depend on the resources from the example platform yet. It could make a call to `https://example-platform.REPLACE_ME.workers.dev/api/org/fe110c72385f49a4ad721a26cdd0f730/users` to list users.

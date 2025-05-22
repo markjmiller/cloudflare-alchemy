@@ -1,7 +1,7 @@
 # Auto-generated
 example-website/*
 example-website-app/*
-.alchemy
+**/.alchemy
 .wrangler
 node_modules
 dist
@@ -29,3 +29,5 @@ lerna-debug.log*
 *.sw?
 .cursorrules
 .env
+
+website/package-lock.json
